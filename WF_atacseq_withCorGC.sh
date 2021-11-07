@@ -1,5 +1,6 @@
 #! /bin/bash
 #cd "$(dirname "$0")"
+#SBATCH -o log/slurmjob-%A-%a
 
 echo 'Groupe 1 : projet HPC '
 echo 'Date: Fall Master course 2021 '
