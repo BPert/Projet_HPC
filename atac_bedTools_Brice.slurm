@@ -55,7 +55,7 @@ tab24h=($(find "$DATA_DIR" -type f -name "*_24h_*_macs2_atacSeq_summits.bed" ))
 echo "tab24h= " >&2
 printf '%s\n' "${tab24h[@]}" >&2
 
-SHORTNAME=($(basename "${tab0h[$SLURM_ARRAY_TASK_ID]::-55}" | cut -c 11- ))
+SHORTNAME=$(basename "${tab0h[$SLURM_ARRAY_TASK_ID]::-55}" | cut -c 11- )
 echo "SHORTNAME=$SHORTNAME" >&2
 
 #Run the program
