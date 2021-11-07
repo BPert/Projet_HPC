@@ -23,9 +23,9 @@ rm -f /home/users/"$USER"/results/performance_workflow.txt
 # first job - no dependencies
 
 # DeepTools - correctGCBias
-#jid7=$(sbatch --parsable script/atac_correctGCBias_Brice.slurm)
-#sbatch --dependency=afterok:$jid7 /home/users/"$USER"/script/performance.slurm "$jid7"
-#echo "$jid7: DeepTools - correctGCBias"
+jid7=$(sbatch --parsable script/atac_correctGCBias_Brice.slurm)
+sbatch --dependency=afterok:$jid7 /home/users/"$USER"/script/performance.slurm "$jid7"
+echo "$jid7: DeepTools - correctGCBias"
 
 # MACS2 Peak Calling : dna accessibility sites
 jid8=$(sbatch --parsable  script/atac_corGC_Macs2_Brice.slurm)  # --dependency=afterok:$jid7   !!! à remettre
