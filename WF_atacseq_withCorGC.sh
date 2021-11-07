@@ -33,6 +33,6 @@ sbatch --dependency=afterok:$jid8 /home/users/"$USER"/script/performance.slurm "
 echo "$jid8: MACS2 Peak Calling : dna accessibility sites."
 
 # Bedtools intersect ; searching for uniques and common accessibility sites between the different cellular stages
-jid9=$(sbatch --parsable --dependency=afterok:$jid8 script/atac_bedTools_Brice.slurm)
+jid9=$(sbatch --parsable --dependency=afterok:$jid8 script/atac_corGC_bedTools_Brice.slurm)
 sbatch --dependency=afterok:$jid9 /home/users/"$USER"/script/performance.slurm "$jid9"
 echo "$jid9 : Bedtools intersect ; searching for uniques and common accessibility sites between the different cellular stages."
